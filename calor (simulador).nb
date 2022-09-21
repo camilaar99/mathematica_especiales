@@ -1,0 +1,216 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7810,        208]
+NotebookOptionsPosition[      7132,        187]
+NotebookOutlinePosition[      7505,        203]
+CellTagsIndexPosition[      7462,        200]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"L", "=", "1.0"}], ";", 
+  RowBox[{"\[Delta]", "=", 
+   RowBox[{"0.83", "*", 
+    RowBox[{"10", "^", 
+     RowBox[{"(", 
+      RowBox[{"-", "4"}], ")"}]}]}]}], ";", 
+  RowBox[{"t1", "=", "2"}], ";", 
+  RowBox[{"t2", "=", "10"}], ";", 
+  RowBox[{
+   RowBox[{"f", "[", "x_", "]"}], ":=", 
+   RowBox[{"10", " ", 
+    RowBox[{"x", "^", "2"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"v", "[", "x_", "]"}], ":=", 
+    RowBox[{
+     RowBox[{
+      FractionBox[
+       RowBox[{"t2", "-", "t1"}], "L"], " ", "x"}], "+", "t1"}]}], ";"}], 
+  " "}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"m", ":=", "20"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"b", "[", "n_", "]"}], "=", 
+   RowBox[{
+    RowBox[{"2", "/", "L"}], " ", 
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", "0", "L"], 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"f", "[", "x", "]"}], "-", 
+        RowBox[{"v", "[", "x", "]"}]}], ")"}], " ", 
+      RowBox[{"Sin", "[", 
+       FractionBox[
+        RowBox[{"n", " ", "\[Pi]", " ", "x"}], "L"], "]"}], 
+      RowBox[{"\[DifferentialD]", "x"}]}]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"u", "[", 
+    RowBox[{"x_", ",", "t_"}], "]"}], "=", 
+   RowBox[{
+    RowBox[{"v", "[", "x", "]"}], "+", 
+    RowBox[{
+     UnderoverscriptBox["\[Sum]", 
+      RowBox[{"n", " ", "=", " ", "1"}], "m"], 
+     RowBox[{
+      RowBox[{"b", "[", "n", "]"}], " ", 
+      RowBox[{"Sin", "[", 
+       FractionBox[
+        RowBox[{"n", " ", "\[Pi]", " ", "x"}], "L"], "]"}], "  ", 
+      RowBox[{"Exp", "[", 
+       RowBox[{
+        RowBox[{"-", "\[Delta]"}], " ", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"n", " ", 
+           RowBox[{"\[Pi]", "/", "L"}]}], ")"}], "^", "2"}], " ", "t"}], 
+       "]"}]}]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"u", "[", 
+      RowBox[{"x", ",", "t"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "L"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "10"}], ",", "10"}], "}"}]}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "2000"}], "}"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{" "}]}], "Input",
+ CellChangeTimes->{{3.757879229971571*^9, 3.7578794044890776`*^9}, {
+   3.7578794397451396`*^9, 3.757879583577392*^9}, {3.7578796196446557`*^9, 
+   3.7578799316682043`*^9}, {3.7578799717914743`*^9, 3.757879990449107*^9}, {
+   3.7578800425375986`*^9, 3.757880100990902*^9}, {3.757880136714964*^9, 
+   3.7578803178312826`*^9}, {3.757880400729828*^9, 3.7578804012290287`*^9}, {
+   3.7578805012408047`*^9, 3.7578805915805635`*^9}, {3.7578806522490697`*^9, 
+   3.757880936149169*^9}, {3.7578810116221013`*^9, 3.757881013915305*^9}, 
+   3.757881767318629*^9, {3.757881882556031*^9, 3.757882092953601*^9}, {
+   3.7578821485550985`*^9, 3.7578821736711426`*^9}, {3.7578822384580564`*^9, 
+   3.7578822391288576`*^9}, {3.7578822950393558`*^9, 3.757882310608183*^9}, {
+   3.7578823907961245`*^9, 3.7578823976913366`*^9}, {3.757882474006671*^9, 
+   3.757882586482868*^9}, {3.7578826202725277`*^9, 3.7578826385713596`*^9}, 
+   3.757882691237052*^9, {3.757882742732743*^9, 3.757882972558547*^9}, 
+   3.757883034693456*^9, {3.757883149072857*^9, 3.7578831502740593`*^9}, {
+   3.7578833799084625`*^9, 3.7578834030069036`*^9}, {3.7578834608464055`*^9, 
+   3.7578834612676063`*^9}, {3.7578834997116737`*^9, 
+   3.7578835018332777`*^9}, {3.7578835937910395`*^9, 
+   3.7578835940406404`*^9}, {3.757883718231659*^9, 3.7578837246588707`*^9}, {
+   3.7583059781903067`*^9, 3.7583060032907505`*^9}},
+ CellLabel->"In[13]:=",ExpressionUUID->"8c80594a-408d-476e-8d6b-03131264ef7c"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`t$$ = 0., Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`t$$], 0, 2000}}, Typeset`size$$ = {
+    540., {165., 173.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`t$11138$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`t$$ = 0}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$11138$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Plot[
+        $CellContext`u[$CellContext`x, $CellContext`t$$], {$CellContext`x, 
+         0, $CellContext`L}, PlotRange -> {-10, 10}], 
+      "Specifications" :> {{$CellContext`t$$, 0, 2000}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{612., {256., 265.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.7583059916999307`*^9, 3.7583060064419565`*^9}, 
+   3.758306050714834*^9},
+ CellLabel->"Out[18]=",ExpressionUUID->"ba40016f-a01e-487a-8d56-5256df0a66ca"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"b", "[", "n", "]"}]], "Input",
+ CellChangeTimes->{{3.758306010841164*^9, 3.758306012915968*^9}},
+ CellLabel->"In[19]:=",ExpressionUUID->"879651c9-8386-43db-a997-0a9dd3e7ca7e"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"2.`", " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", "0.6450306886639899`"}], "-", 
+     RowBox[{"0.6366197723675814`", " ", 
+      SuperscriptBox["n", "2"]}], "+", 
+     RowBox[{"0.6450306886639899`", " ", 
+      RowBox[{"Cos", "[", 
+       RowBox[{"3.141592653589793`", " ", "n"}], "]"}]}], "+", 
+     RowBox[{"1.2158542037080537`", " ", "n", " ", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"3.141592653589793`", " ", "n"}], "]"}]}]}], ")"}]}], 
+  SuperscriptBox["n", "3"]]], "Output",
+ CellChangeTimes->{3.758306013805169*^9},
+ CellLabel->"Out[19]=",ExpressionUUID->"4d74b43f-6c0a-4518-b70d-7bbc019240e0"]
+}, Open  ]]
+},
+WindowSize->{1600, 808},
+WindowMargins->{{-9, Automatic}, {Automatic, -9}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 3839, 98, 316, "Input",ExpressionUUID->"8c80594a-408d-476e-8d6b-03131264ef7c"],
+Cell[4422, 122, 1801, 36, 549, "Output",ExpressionUUID->"ba40016f-a01e-487a-8d56-5256df0a66ca"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6260, 163, 199, 3, 43, "Input",ExpressionUUID->"879651c9-8386-43db-a997-0a9dd3e7ca7e"],
+Cell[6462, 168, 654, 16, 110, "Output",ExpressionUUID->"4d74b43f-6c0a-4518-b70d-7bbc019240e0"]
+}, Open  ]]
+}
+]
+*)
+
